@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prometheus Bot Features - Salamanders XVIII Legion</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+            color: #e0e0e0;
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background: linear-gradient(135deg, #1a4d1a 0%, #2e8b2e 100%);
+            border: 2px solid #ff6600;
+            border-radius: 10px;
+            padding: 40px 20px;
+            text-align: center;
+            margin-bottom: 40px;
+            box-shadow: 0 0 30px rgba(255, 102, 0, 0.3);
+        }
+
+        h1 {
+            color: #ff6600;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .subtitle {
+            color: #ffd700;
+            font-size: 1.3em;
+            font-style: italic;
+            margin-bottom: 15px;
+        }
+
+        .tagline {
+            color: #e0e0e0;
+            font-size: 1.1em;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+
+        .feature-card {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+            border: 2px solid #2e8b2e;
+            border-radius: 10px;
+            padding: 25px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            border-color: #ff6600;
+            box-shadow: 0 8px 20px rgba(255, 102, 0, 0.4);
+        }
+
+        .feature-icon {
+            font-size: 2.5em;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .feature-card h3 {
+            color: #ff6600;
+            font-size: 1.5em;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #2e8b2e;
+            padding-bottom: 10px;
+        }
+
+        .feature-card ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .feature-card li {
+            padding: 8px 0;
+            padding-left: 25px;
+            position: relative;
+            color: #d0d0d0;
+        }
+
+        .feature-card li:before {
+            content: "🔥";
+            position: absolute;
+            left: 0;
+        }
+
+        .feature-card p {
+            color: #b0b0b0;
+            margin-bottom: 15px;
+            font-size: 0.95em;
+        }
+
+        .command-example {
+            background: #0a0a0a;
+            border-left: 3px solid #ff6600;
+            padding: 10px 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+            font-family: 'Courier New', monospace;
+            color: #2e8b2e;
+            font-size: 0.9em;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px 20px;
+            background: linear-gradient(135deg, #1a4d1a 0%, #2e8b2e 100%);
+            border: 2px solid #ff6600;
+            border-radius: 10px;
+            margin-top: 40px;
+            box-shadow: 0 0 30px rgba(255, 102, 0, 0.3);
+        }
+
+        footer p {
+            color: #e0e0e0;
+            font-size: 1.1em;
+        }
+
+        .motto {
+            color: #ffd700;
+            font-size: 1.3em;
+            font-weight: bold;
+            font-style: italic;
+            margin-top: 10px;
+        }
+
+        .highlight {
+            color: #ff6600;
+            font-weight: bold;
+        }
+
+        .section-title {
+            color: #ff6600;
+            font-size: 2em;
+            margin: 40px 0 20px 0;
+            text-align: center;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        @media (max-width: 768px) {
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            h1 {
+                font-size: 2em;
+            }
+
+            .subtitle {
+                font-size: 1.1em;
+            }
+        }
+
+        .badge {
+            display: inline-block;
+            background: #ff6600;
+            color: #000;
+            padding: 3px 10px;
+            border-radius: 12px;
+            font-size: 0.8em;
+            font-weight: bold;
+            margin-left: 8px;
+        }
+
+        .admin-badge {
+            background: #ffd700;
+        }
+
+        .staff-badge {
+            background: #2e8b2e;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🔥 PROMETHEUS BOT 🔥</h1>
+            <div class="subtitle">Salamanders XVIII Legion Command System</div>
+            <div class="tagline">
+                "Into the fires of battle, unto the anvil of war!"<br>
+                Comprehensive battle tracking and legion management for the sons of Vulkan.
+            </div>
+        </header>
+
+        <h2 class="section-title">⚔️ Core Features ⚔️</h2>
+
+        <div class="features-grid">
+            <!-- Character Card System -->
+            <div class="feature-card">
+                <span class="feature-icon">📋</span>
+                <h3>Character Card System</h3>
+                <p>Create and manage your warrior's combat record with comprehensive tracking.</p>
+                <ul>
+                    <li>Personal character creation with Roblox username</li>
+                    <li>Custom character names and quotes</li>
+                    <li>Timezone tracking for coordination</li>
+                    <li>Character image support</li>
+                    <li>Total points and events tracking</li>
+                    <li>View any warrior's card</li>
+                </ul>
+                <div class="command-example">/create_character_card</div>
+                <div class="command-example">/view_character_card</div>
+                <div class="command-example">/delete_character_card</div>
+            </div>
+
+            <!-- Event Logging System -->
+            <div class="feature-card">
+                <span class="feature-icon">⚡</span>
+                <h3>Event Logging & Points</h3>
+                <p>Track your battles and earn points based on your role and performance.</p>
+                <ul>
+                    <li>Multiple event types (Trainings, Deployments, Raids, etc.)</li>
+                    <li>Screenshot proof required</li>
+                    <li>Time-based bonuses for Legionaries (30/60/90+ min)</li>
+                    <li>Separate point systems for Staff vs Legionaries</li>
+                    <li>Approval workflow with authorized roles</li>
+                    <li>Automatic point calculation</li>
+                </ul>
+                <div class="command-example">/log_event</div>
+                <div class="command-example">/recent_events</div>
+            </div>
+
+            <!-- Oath of the Flame -->
+            <div class="feature-card">
+                <span class="feature-icon">🔥</span>
+                <h3>Oath of the Flame</h3>
+                <p>Swear sacred oaths in Vulkan's name and prove your dedication.</p>
+                <ul>
+                    <li>Swear personal oaths with duration</li>
+                    <li>Active oath tracking and reminders</li>
+                    <li>Fulfill or cancel oaths</li>
+                    <li>Oath fulfillment history</li>
+                    <li>Automated expiration system</li>
+                    <li>View all warriors' active oaths</li>
+                </ul>
+                <div class="command-example">/oath_of_the_flame</div>
+                <div class="command-example">/my_oath</div>
+                <div class="command-example">/fulfill_oath</div>
+                <div class="command-example">/all_oaths</div>
+            </div>
+
+            <!-- Commendations -->
+            <div class="feature-card">
+                <span class="feature-icon">🏅</span>
+                <h3>Commendations</h3>
+                <p>Recognize exceptional warriors for their deeds in battle.</p>
+                <ul>
+                    <li>Award commendations to deserving warriors</li>
+                    <li>Custom reasons for recognition</li>
+                    <li>Commendation history tracking</li>
+                    <li>Anti-spam cooldown system (5 minutes)</li>
+                    <li>Permission-based awarding</li>
+                </ul>
+                <div class="command-example">/commend <span class="badge">AUTHORIZED</span></div>
+                <div class="command-example">/my_commendations</div>
+            </div>
+
+            <!-- Penance System -->
+            <div class="feature-card">
+                <span class="feature-icon">⚖️</span>
+                <h3>Penance System</h3>
+                <p>Assign and track penances for warriors who require correction.</p>
+                <ul>
+                    <li>Assign time-based penances (days/hours)</li>
+                    <li>Custom penance descriptions</li>
+                    <li>Automatic expiration tracking</li>
+                    <li>Early removal with reason logging</li>
+                    <li>Active penance display on character cards</li>
+                    <li>Complete penance history</li>
+                </ul>
+                <div class="command-example">/assign_penance <span class="badge admin-badge">ADMIN</span></div>
+                <div class="command-example">/remove_penance <span class="badge admin-badge">ADMIN</span></div>
+            </div>
+
+            <!-- Qualifications -->
+            <div class="feature-card">
+                <span class="feature-icon">🎓</span>
+                <h3>Qualifications</h3>
+                <p>Track specialized training and certifications for your warriors.</p>
+                <ul>
+                    <li>Award specialized qualifications</li>
+                    <li>Remove outdated qualifications</li>
+                    <li>Track who awarded each qualification</li>
+                    <li>Timestamp recording</li>
+                    <li>Display on character cards</li>
+                </ul>
+                <div class="command-example">/manage_qualifications <span class="badge staff-badge">STAFF</span></div>
+            </div>
+
+            <!-- Leaderboards -->
+            <div class="feature-card">
+                <span class="feature-icon">🏆</span>
+                <h3>Leaderboards</h3>
+                <p>Compete with your brothers for glory and recognition.</p>
+                <ul>
+                    <li>Top 10 rankings by category</li>
+                    <li>Points leaderboard</li>
+                    <li>Total events leaderboard</li>
+                    <li>Oaths fulfilled leaderboard</li>
+                    <li>Medal system (Gold, Silver, Bronze)</li>
+                </ul>
+                <div class="command-example">/character_card_leaderboard</div>
+            </div>
+
+            <!-- Lore & Flavor -->
+            <div class="feature-card">
+                <span class="feature-icon">📜</span>
+                <h3>Salamanders Lore</h3>
+                <p>Immerse yourself in the culture and wisdom of the XVIII Legion.</p>
+                <ul>
+                    <li>Vulkan's wisdom and teachings</li>
+                    <li>Inspiring Salamanders quotes</li>
+                    <li>Battle prayers and rituals</li>
+                    <li>Legion rallying cries</li>
+                    <li>Primarch addresses to the Legion</li>
+                </ul>
+                <div class="command-example">/vulkan_wisdom</div>
+                <div class="command-example">/salamanders_quote</div>
+                <div class="command-example">/battle_prayer</div>
+                <div class="command-example">/for_vulkan</div>
+                <div class="command-example">/vulkan_address</div>
+            </div>
+        </div>
+
+        <h2 class="section-title">🔧 Technical Features 🔧</h2>
+
+        <div class="features-grid">
+            <!-- Storage System -->
+            <div class="feature-card">
+                <span class="feature-icon">💾</span>
+                <h3>Advanced Storage</h3>
+                <p>Robust data persistence with GitHub-based sharded storage.</p>
+                <ul>
+                    <li>Automatic sharding for large datasets</li>
+                    <li>1000 entries per shard (configurable)</li>
+                    <li>10MB file size monitoring</li>
+                    <li>Automatic shard cleanup</li>
+                    <li>SHA caching for efficient updates</li>
+                    <li>Load balancing across multiple files</li>
+                </ul>
+            </div>
+
+            <!-- Permission System -->
+            <div class="feature-card">
+                <span class="feature-icon">🔐</span>
+                <h3>Permission Management</h3>
+                <p>Granular role-based access control for all features.</p>
+                <ul>
+                    <li>Bot Admin override permissions</li>
+                    <li>Staff role permissions</li>
+                    <li>Legionary role permissions</li>
+                    <li>Commendation authorization</li>
+                    <li>Event approval roles</li>
+                    <li>Penance management roles</li>
+                    <li>Qualification management roles</li>
+                </ul>
+            </div>
+
+            <!-- Event Types & Points -->
+            <div class="feature-card">
+                <span class="feature-icon">📊</span>
+                <h3>Point System Details</h3>
+                <p><strong>Staff Points:</strong></p>
+                <ul>
+                    <li>Trainings: 2 pts</li>
+                    <li>Practice Raids: 2 pts</li>
+                    <li>Tryouts: 2 pts</li>
+                    <li>Legion Rally: 3 pts</li>
+                    <li>Inspections: 3 pts</li>
+                    <li>Deployments/Startup/Patrol/Gamenights/Rally: 1 pt</li>
+                </ul>
+                <p><strong>Legionary Points:</strong></p>
+                <ul>
+                    <li>Legion Rally: 12 pts</li>
+                    <li>Inspections: 12 pts</li>
+                    <li>Rally: 8 pts</li>
+                    <li>Practice Raids: 6 pts</li>
+                    <li>Trainings: 4 pts</li>
+                    <li>Deployments/Startup/Patrols: 3 pts</li>
+                    <li>Gamenights: 2 pts</li>
+                    <li>Time Bonuses: +1/+2/+3 (30/60/90+ min)</li>
+                </ul>
+            </div>
+
+            <!-- Logging Channels -->
+            <div class="feature-card">
+                <span class="feature-icon">📝</span>
+                <h3>Logging System</h3>
+                <p>Comprehensive logging for transparency and record-keeping.</p>
+                <ul>
+                    <li>Event submission logs</li>
+                    <li>Event approval/decline logs</li>
+                    <li>Qualification award logs</li>
+                    <li>Penance assignment logs</li>
+                    <li>Oath declaration logs</li>
+                    <li>DM relay for support</li>
+                </ul>
+            </div>
+        </div>
+
+        <footer>
+            <p><strong>Prometheus Bot</strong> - Salamanders XVIII Legion</p>
+            <p>Developed for the sons of Vulkan</p>
+            <p class="motto">"Vulkan Lives! Into the fires of battle!"</p>
+            <p style="margin-top: 15px; font-size: 0.9em; color: #b0b0b0;">
+                Powered by Discord.js v14 | GitHub Sharded Storage | Node.js 18+
+            </p>
+        </footer>
+    </div>
+</body>
+</html>
