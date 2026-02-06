@@ -13,50 +13,66 @@
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d1810 100%);
             color: #e0e0e0;
             line-height: 1.6;
-            min-height: 100vh;
+            padding: 20px;
         }
 
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 20px;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 8px 32px rgba(255, 69, 0, 0.3);
+            border: 2px solid #FF4500;
         }
 
         header {
-            background: linear-gradient(135deg, #1a4d1a 0%, #2e8b2e 100%);
-            border: 2px solid #ff6600;
-            border-radius: 10px;
-            padding: 40px 20px;
             text-align: center;
-            margin-bottom: 40px;
-            box-shadow: 0 0 30px rgba(255, 102, 0, 0.3);
+            margin-bottom: 50px;
+            border-bottom: 3px solid #FF4500;
+            padding-bottom: 30px;
         }
 
         h1 {
-            color: #ff6600;
-            font-size: 2.5em;
+            font-size: 3em;
+            color: #FF4500;
+            text-shadow: 0 0 20px rgba(255, 69, 0, 0.7);
             margin-bottom: 10px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            letter-spacing: 3px;
         }
 
         .subtitle {
-            color: #ffd700;
             font-size: 1.3em;
-            font-style: italic;
+            color: #2d5016;
+            font-weight: bold;
             margin-bottom: 15px;
         }
 
         .tagline {
-            color: #e0e0e0;
+            font-style: italic;
+            color: #FFD700;
             font-size: 1.1em;
-            max-width: 800px;
-            margin: 0 auto;
         }
 
-        .features-grid {
+        .description {
+            color: #b0b0b0;
+            margin-top: 10px;
+            font-size: 1em;
+        }
+
+        h2 {
+            color: #FFD700;
+            font-size: 2.2em;
+            margin: 40px 0 30px 0;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .feature-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
             gap: 25px;
@@ -64,136 +80,142 @@
         }
 
         .feature-card {
-            background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
-            border: 2px solid #2e8b2e;
+            background: linear-gradient(135deg, rgba(45, 80, 22, 0.3) 0%, rgba(20, 20, 20, 0.5) 100%);
+            border: 2px solid #2d5016;
             border-radius: 10px;
             padding: 25px;
             transition: all 0.3s ease;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
         }
 
         .feature-card:hover {
             transform: translateY(-5px);
-            border-color: #ff6600;
-            box-shadow: 0 8px 20px rgba(255, 102, 0, 0.4);
+            border-color: #FF4500;
+            box-shadow: 0 8px 25px rgba(255, 69, 0, 0.4);
         }
 
         .feature-icon {
-            font-size: 2.5em;
+            font-size: 3em;
+            text-align: center;
             margin-bottom: 15px;
-            display: block;
         }
 
         .feature-card h3 {
-            color: #ff6600;
+            color: #FF4500;
             font-size: 1.5em;
             margin-bottom: 15px;
-            border-bottom: 2px solid #2e8b2e;
-            padding-bottom: 10px;
+            text-align: center;
         }
 
         .feature-card ul {
             list-style: none;
-            padding-left: 0;
+            margin: 15px 0;
         }
 
-        .feature-card li {
+        .feature-card ul li {
             padding: 8px 0;
             padding-left: 25px;
             position: relative;
             color: #d0d0d0;
         }
 
-        .feature-card li:before {
+        .feature-card ul li:before {
             content: "🔥";
             position: absolute;
             left: 0;
         }
 
-        .feature-card p {
-            color: #b0b0b0;
-            margin-bottom: 15px;
-            font-size: 0.95em;
-        }
-
-        .command-example {
-            background: #0a0a0a;
-            border-left: 3px solid #ff6600;
-            padding: 10px 15px;
-            margin: 10px 0;
+        .command {
+            background: rgba(0, 0, 0, 0.5);
+            color: #FFD700;
+            padding: 8px 15px;
             border-radius: 5px;
             font-family: 'Courier New', monospace;
-            color: #2e8b2e;
+            display: inline-block;
+            margin: 5px 5px 5px 0;
+            border: 1px solid #2d5016;
             font-size: 0.9em;
+        }
+
+        .badge {
+            background: #FF4500;
+            color: white;
+            padding: 3px 10px;
+            border-radius: 3px;
+            font-size: 0.75em;
+            font-weight: bold;
+            margin-left: 10px;
+            text-transform: uppercase;
+        }
+
+        .badge.admin { background: #8b0000; }
+        .badge.staff { background: #2d5016; }
+        .badge.new { background: #FFD700; color: #000; }
+
+        .technical-section {
+            background: rgba(0, 0, 0, 0.5);
+            border: 2px solid #FFD700;
+            border-radius: 10px;
+            padding: 30px;
+            margin: 30px 0;
+        }
+
+        .points-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        .points-table th,
+        .points-table td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #2d5016;
+        }
+
+        .points-table th {
+            background: rgba(255, 69, 0, 0.3);
+            color: #FFD700;
+            font-weight: bold;
+        }
+
+        .points-table tr:hover {
+            background: rgba(45, 80, 22, 0.2);
         }
 
         footer {
             text-align: center;
-            padding: 30px 20px;
-            background: linear-gradient(135deg, #1a4d1a 0%, #2e8b2e 100%);
-            border: 2px solid #ff6600;
-            border-radius: 10px;
-            margin-top: 40px;
-            box-shadow: 0 0 30px rgba(255, 102, 0, 0.3);
+            margin-top: 60px;
+            padding-top: 30px;
+            border-top: 2px solid #FF4500;
+            color: #888;
+        }
+
+        footer .flame {
+            font-size: 2em;
+            margin-bottom: 10px;
         }
 
         footer p {
-            color: #e0e0e0;
-            font-size: 1.1em;
-        }
-
-        .motto {
-            color: #ffd700;
-            font-size: 1.3em;
-            font-weight: bold;
-            font-style: italic;
-            margin-top: 10px;
+            margin: 8px 0;
         }
 
         .highlight {
-            color: #ff6600;
+            color: #FF4500;
             font-weight: bold;
         }
 
-        .section-title {
-            color: #ff6600;
-            font-size: 2em;
-            margin: 40px 0 20px 0;
-            text-align: center;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-        }
-
         @media (max-width: 768px) {
-            .features-grid {
-                grid-template-columns: 1fr;
+            .container {
+                padding: 20px;
             }
 
             h1 {
                 font-size: 2em;
             }
 
-            .subtitle {
-                font-size: 1.1em;
+            .feature-grid {
+                grid-template-columns: 1fr;
             }
-        }
-
-        .badge {
-            display: inline-block;
-            background: #ff6600;
-            color: #000;
-            padding: 3px 10px;
-            border-radius: 12px;
-            font-size: 0.8em;
-            font-weight: bold;
-            margin-left: 8px;
-        }
-
-        .admin-badge {
-            background: #ffd700;
-        }
-
-        .staff-badge {
-            background: #2e8b2e;
         }
     </style>
 </head>
@@ -202,234 +224,287 @@
         <header>
             <h1>🔥 PROMETHEUS BOT 🔥</h1>
             <div class="subtitle">Salamanders XVIII Legion Command System</div>
-            <div class="tagline">
-                "Into the fires of battle, unto the anvil of war!"<br>
-                Comprehensive battle tracking and legion management for the sons of Vulkan.
-            </div>
+            <p class="tagline">"Into the fires of battle, unto the anvil of war!"</p>
+            <p class="description">Comprehensive battle tracking, quota management, and legion coordination for the sons of Vulkan.</p>
         </header>
 
-        <h2 class="section-title">⚔️ Core Features ⚔️</h2>
+        <h2>⚔️ Core Features ⚔️</h2>
 
-        <div class="features-grid">
-            <!-- Character Card System -->
+        <div class="feature-grid">
+            <!-- Combat Event Logging -->
             <div class="feature-card">
-                <span class="feature-icon">📋</span>
-                <h3>Character Card System</h3>
-                <p>Create and manage your warrior's combat record with comprehensive tracking.</p>
+                <div class="feature-icon">⚡</div>
+                <h3>Combat Event Logging<span class="badge new">Enhanced</span></h3>
+                <p>Track your battles and automatically earn quota points based on your role and performance.</p>
                 <ul>
-                    <li>Personal character creation with Roblox username</li>
-                    <li>Custom character names and quotes</li>
-                    <li>Timezone tracking for coordination</li>
-                    <li>Character image support</li>
-                    <li>Total points and events tracking</li>
-                    <li>View any warrior's card</li>
-                </ul>
-                <div class="command-example">/create_character_card</div>
-                <div class="command-example">/view_character_card</div>
-                <div class="command-example">/delete_character_card</div>
-            </div>
-
-            <!-- Event Logging System -->
-            <div class="feature-card">
-                <span class="feature-icon">⚡</span>
-                <h3>Event Logging & Points</h3>
-                <p>Track your battles and earn points based on your role and performance.</p>
-                <ul>
-                    <li>Multiple event types (Trainings, Deployments, Raids, etc.)</li>
+                    <li>10+ event types (Training, Deployment, Rally, Inspection, etc.)</li>
                     <li>Screenshot proof required</li>
+                    <li>Difficulty ratings & enemy types</li>
                     <li>Time-based bonuses for Legionaries (30/60/90+ min)</li>
-                    <li>Separate point systems for Staff vs Legionaries</li>
+                    <li>Dual point systems (Staff vs Legionary)</li>
                     <li>Approval workflow with authorized roles</li>
-                    <li>Automatic point calculation</li>
+                    <li>Automatic Google Sheets quota updates</li>
+                    <li>Edit events after submission</li>
                 </ul>
-                <div class="command-example">/log_event</div>
-                <div class="command-example">/recent_events</div>
+                <div>
+                    <span class="command">/event_log</span>
+                    <span class="command">/view_logs</span>
+                    <span class="command">/edit_event</span>
+                </div>
             </div>
 
-            <!-- Oath of the Flame -->
+            <!-- Google Sheets Integration -->
             <div class="feature-card">
-                <span class="feature-icon">🔥</span>
-                <h3>Oath of the Flame</h3>
+                <div class="feature-icon">📊</div>
+                <h3>Google Sheets Integration<span class="badge new">NEW</span></h3>
+                <p>Seamless quota tracking with automatic Google Sheets updates.</p>
+                <ul>
+                    <li>Auto-updates points per approved event</li>
+                    <li>Daily quota tracking (Monday-Sunday)</li>
+                    <li>Multi-company sheet support</li>
+                    <li>Auto-detects user's company</li>
+                    <li>Weekly totals calculated automatically</li>
+                    <li>EST timezone-based day tracking</li>
+                    <li>Weekly reset on Sunday midnight</li>
+                </ul>
+                <div>
+                    <span class="command">/weekly_reset</span>
+                    <span class="badge admin">ADMIN</span>
+                </div>
+            </div>
+
+            <!-- Event Approval System -->
+            <div class="feature-card">
+                <div class="feature-icon">✅</div>
+                <h3>Event Approval System<span class="badge staff">STAFF</span></h3>
+                <p>Review and approve combat event submissions with full logging.</p>
+                <ul>
+                    <li>Approve or decline submitted events</li>
+                    <li>Add approval notes/feedback</li>
+                    <li>Multi-user approval support</li>
+                    <li>Automatic point calculation on approval</li>
+                    <li>Rich embed notifications</li>
+                    <li>Dedicated approval log channel</li>
+                </ul>
+                <div>
+                    <span class="command">/approve_event</span>
+                    <span class="command">/decline_event</span>
+                    <span class="badge staff">STAFF</span>
+                </div>
+            </div>
+
+            <!-- Oath of Moment -->
+            <div class="feature-card">
+                <div class="feature-icon">🔥</div>
+                <h3>Oath of Moment</h3>
                 <p>Swear sacred oaths in Vulkan's name and prove your dedication.</p>
                 <ul>
-                    <li>Swear personal oaths with duration</li>
-                    <li>Active oath tracking and reminders</li>
-                    <li>Fulfill or cancel oaths</li>
-                    <li>Oath fulfillment history</li>
+                    <li>Swear personal oaths with custom duration</li>
+                    <li>Days and hours configuration</li>
+                    <li>Active oath tracking & reminders</li>
+                    <li>Fulfill or cancel oaths with authorization</li>
+                    <li>Complete oath history</li>
                     <li>Automated expiration system</li>
                     <li>View all warriors' active oaths</li>
                 </ul>
-                <div class="command-example">/oath_of_the_flame</div>
-                <div class="command-example">/my_oath</div>
-                <div class="command-example">/fulfill_oath</div>
-                <div class="command-example">/all_oaths</div>
+                <div>
+                    <span class="command">/oath_of_moment</span>
+                    <span class="command">/my_oath</span>
+                    <span class="command">/fulfill_oath</span>
+                    <span class="command">/cancel_oath</span>
+                    <span class="command">/all_oaths</span>
+                </div>
             </div>
 
             <!-- Commendations -->
             <div class="feature-card">
-                <span class="feature-icon">🏅</span>
-                <h3>Commendations</h3>
+                <div class="feature-icon">🏅</div>
+                <h3>Commendation System</h3>
                 <p>Recognize exceptional warriors for their deeds in battle.</p>
                 <ul>
                     <li>Award commendations to deserving warriors</li>
                     <li>Custom reasons for recognition</li>
-                    <li>Commendation history tracking</li>
-                    <li>Anti-spam cooldown system (5 minutes)</li>
+                    <li>Complete commendation history</li>
+                    <li>Anti-spam cooldown (5 minutes)</li>
                     <li>Permission-based awarding</li>
+                    <li>Public recognition embeds</li>
                 </ul>
-                <div class="command-example">/commend <span class="badge">AUTHORIZED</span></div>
-                <div class="command-example">/my_commendations</div>
+                <div>
+                    <span class="command">/commend</span>
+                    <span class="command">/my_commendations</span>
+                    <span class="badge staff">AUTHORIZED</span>
+                </div>
             </div>
 
             <!-- Penance System -->
             <div class="feature-card">
-                <span class="feature-icon">⚖️</span>
-                <h3>Penance System</h3>
-                <p>Assign and track penances for warriors who require correction.</p>
+                <div class="feature-icon">⚖️</div>
+                <h3>Penance System<span class="badge admin">ADMIN</span></h3>
+                <p>Assign and track penances for warriors requiring correction.</p>
                 <ul>
-                    <li>Assign time-based penances (days/hours)</li>
+                    <li>Time-based penances (days/hours)</li>
                     <li>Custom penance descriptions</li>
                     <li>Automatic expiration tracking</li>
                     <li>Early removal with reason logging</li>
-                    <li>Active penance display on character cards</li>
                     <li>Complete penance history</li>
+                    <li>Dedicated logging channel</li>
                 </ul>
-                <div class="command-example">/assign_penance <span class="badge admin-badge">ADMIN</span></div>
-                <div class="command-example">/remove_penance <span class="badge admin-badge">ADMIN</span></div>
+                <div>
+                    <span class="command">/assign_penance</span>
+                    <span class="command">/remove_penance</span>
+                    <span class="badge admin">ADMIN</span>
+                </div>
             </div>
 
-            <!-- Qualifications -->
+            <!-- Salamanders Lore -->
             <div class="feature-card">
-                <span class="feature-icon">🎓</span>
-                <h3>Qualifications</h3>
-                <p>Track specialized training and certifications for your warriors.</p>
+                <div class="feature-icon">📜</div>
+                <h3>Salamanders Lore & Culture</h3>
+                <p>Immerse yourself in the wisdom and traditions of the XVIII Legion.</p>
                 <ul>
-                    <li>Award specialized qualifications</li>
-                    <li>Remove outdated qualifications</li>
-                    <li>Track who awarded each qualification</li>
-                    <li>Timestamp recording</li>
-                    <li>Display on character cards</li>
-                </ul>
-                <div class="command-example">/manage_qualifications <span class="badge staff-badge">STAFF</span></div>
-            </div>
-
-            <!-- Leaderboards -->
-            <div class="feature-card">
-                <span class="feature-icon">🏆</span>
-                <h3>Leaderboards</h3>
-                <p>Compete with your brothers for glory and recognition.</p>
-                <ul>
-                    <li>Top 10 rankings by category</li>
-                    <li>Points leaderboard</li>
-                    <li>Total events leaderboard</li>
-                    <li>Oaths fulfilled leaderboard</li>
-                    <li>Medal system (Gold, Silver, Bronze)</li>
-                </ul>
-                <div class="command-example">/character_card_leaderboard</div>
-            </div>
-
-            <!-- Lore & Flavor -->
-            <div class="feature-card">
-                <span class="feature-icon">📜</span>
-                <h3>Salamanders Lore</h3>
-                <p>Immerse yourself in the culture and wisdom of the XVIII Legion.</p>
-                <ul>
-                    <li>Vulkan's wisdom and teachings</li>
+                    <li>Prometheus's wisdom and teachings</li>
                     <li>Inspiring Salamanders quotes</li>
                     <li>Battle prayers and rituals</li>
                     <li>Legion rallying cries</li>
-                    <li>Primarch addresses to the Legion</li>
+                    <li>Prometheus addresses to the Legion</li>
+                    <li>Prometheus's blessings before battle</li>
                 </ul>
-                <div class="command-example">/vulkan_wisdom</div>
-                <div class="command-example">/salamanders_quote</div>
-                <div class="command-example">/battle_prayer</div>
-                <div class="command-example">/for_vulkan</div>
-                <div class="command-example">/vulkan_address</div>
+                <div>
+                    <span class="command">/prometheus_wisdom</span>
+                    <span class="command">/salamanders_quote</span>
+                    <span class="command">/battle_prayer</span>
+                    <span class="command">/for_prometheus</span>
+                    <span class="command">/prometheus_address</span>
+                    <span class="command">/prometheus_blessing</span>
+                </div>
+            </div>
+
+            <!-- Admin Tools -->
+            <div class="feature-card">
+                <div class="feature-icon">👑</div>
+                <h3>Admin Communication Tools<span class="badge admin">ADMIN</span></h3>
+                <p>Powerful tools for legion leadership to communicate and coordinate.</p>
+                <ul>
+                    <li>Speak as Prometheus in any channel</li>
+                    <li>Send rich embeds with images</li>
+                    <li>Create directives with buttons/links</li>
+                    <li>Multi-button support (up to 5)</li>
+                    <li>Custom thumbnails and footers</li>
+                    <li>Mass role pinging capability</li>
+                </ul>
+                <div>
+                    <span class="command">/speak_as_prometheus</span>
+                    <span class="command">/prometheus_directive</span>
+                    <span class="command">/mass_ping</span>
+                    <span class="badge admin">ADMIN</span>
+                </div>
             </div>
         </div>
 
-        <h2 class="section-title">🔧 Technical Features 🔧</h2>
+        <h2>🔧 Technical Features 🔧</h2>
 
-        <div class="features-grid">
-            <!-- Storage System -->
-            <div class="feature-card">
-                <span class="feature-icon">💾</span>
-                <h3>Advanced Storage</h3>
-                <p>Robust data persistence with GitHub-based sharded storage.</p>
-                <ul>
-                    <li>Automatic sharding for large datasets</li>
-                    <li>1000 entries per shard (configurable)</li>
-                    <li>10MB file size monitoring</li>
-                    <li>Automatic shard cleanup</li>
-                    <li>SHA caching for efficient updates</li>
-                    <li>Load balancing across multiple files</li>
-                </ul>
-            </div>
+        <div class="technical-section">
+            <h3 style="color: #FFD700; margin-bottom: 20px;">💾 Advanced Storage System</h3>
+            <p>Robust data persistence with GitHub-based sharded storage for scalability.</p>
+            <ul style="list-style: none; margin: 15px 0;">
+                <li style="padding: 8px 0;">🔥 Automatic sharding for large datasets (1000 entries per shard)</li>
+                <li style="padding: 8px 0;">🔥 10MB file size monitoring and alerts</li>
+                <li style="padding: 8px 0;">🔥 Automatic shard cleanup and optimization</li>
+                <li style="padding: 8px 0;">🔥 SHA caching for efficient updates</li>
+                <li style="padding: 8px 0;">🔥 Load balancing across multiple files</li>
+                <li style="padding: 8px 0;">🔥 Separate storage for combat logs and oaths</li>
+            </ul>
+        </div>
 
-            <!-- Permission System -->
-            <div class="feature-card">
-                <span class="feature-icon">🔐</span>
-                <h3>Permission Management</h3>
-                <p>Granular role-based access control for all features.</p>
-                <ul>
-                    <li>Bot Admin override permissions</li>
-                    <li>Staff role permissions</li>
-                    <li>Legionary role permissions</li>
-                    <li>Commendation authorization</li>
-                    <li>Event approval roles</li>
-                    <li>Penance management roles</li>
-                    <li>Qualification management roles</li>
-                </ul>
-            </div>
+        <div class="technical-section">
+            <h3 style="color: #FFD700; margin-bottom: 20px;">🔐 Permission Management</h3>
+            <p>Granular role-based access control for all features.</p>
+            <ul style="list-style: none; margin: 15px 0;">
+                <li style="padding: 8px 0;">🔥 Bot Admin override permissions (configurable user IDs)</li>
+                <li style="padding: 8px 0;">🔥 Staff role permissions for event approvals</li>
+                <li style="padding: 8px 0;">🔥 Commendation authorization role</li>
+                <li style="padding: 8px 0;">🔥 Event approval role management</li>
+                <li style="padding: 8px 0;">🔥 Penance assignment role (admin-only)</li>
+                <li style="padding: 8px 0;">🔥 Oath fulfillment role permissions</li>
+            </ul>
+        </div>
 
-            <!-- Event Types & Points -->
-            <div class="feature-card">
-                <span class="feature-icon">📊</span>
-                <h3>Point System Details</h3>
-                <p><strong>Staff Points:</strong></p>
-                <ul>
-                    <li>Trainings: 2 pts</li>
-                    <li>Practice Raids: 2 pts</li>
-                    <li>Tryouts: 2 pts</li>
-                    <li>Legion Rally: 3 pts</li>
-                    <li>Inspections: 3 pts</li>
-                    <li>Deployments/Startup/Patrol/Gamenights/Rally: 1 pt</li>
-                </ul>
-                <p><strong>Legionary Points:</strong></p>
-                <ul>
-                    <li>Legion Rally: 12 pts</li>
-                    <li>Inspections: 12 pts</li>
-                    <li>Rally: 8 pts</li>
-                    <li>Practice Raids: 6 pts</li>
-                    <li>Trainings: 4 pts</li>
-                    <li>Deployments/Startup/Patrols: 3 pts</li>
-                    <li>Gamenights: 2 pts</li>
-                    <li>Time Bonuses: +1/+2/+3 (30/60/90+ min)</li>
-                </ul>
-            </div>
+        <div class="technical-section">
+            <h3 style="color: #FFD700; margin-bottom: 20px;">📊 Point System Details</h3>
+            
+            <h4 style="color: #FF4500; margin: 20px 0 10px 0;">Staff Point Values:</h4>
+            <table class="points-table">
+                <thead>
+                    <tr>
+                        <th>Event Type</th>
+                        <th>Points</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>Legion Rally</td><td class="highlight">3 pts</td></tr>
+                    <tr><td>Inspection</td><td class="highlight">3 pts</td></tr>
+                    <tr><td>Training</td><td class="highlight">2 pts</td></tr>
+                    <tr><td>Practice Raid</td><td class="highlight">2 pts</td></tr>
+                    <tr><td>Tryout</td><td class="highlight">2 pts</td></tr>
+                    <tr><td>Deployment / Server Startup / Patrol / Gamenight / Rally</td><td class="highlight">1 pt</td></tr>
+                </tbody>
+            </table>
 
-            <!-- Logging Channels -->
-            <div class="feature-card">
-                <span class="feature-icon">📝</span>
-                <h3>Logging System</h3>
-                <p>Comprehensive logging for transparency and record-keeping.</p>
-                <ul>
-                    <li>Event submission logs</li>
-                    <li>Event approval/decline logs</li>
-                    <li>Qualification award logs</li>
-                    <li>Penance assignment logs</li>
-                    <li>Oath declaration logs</li>
-                    <li>DM relay for support</li>
-                </ul>
-            </div>
+            <h4 style="color: #FF4500; margin: 20px 0 10px 0;">Legionary Point Values (+ Time Bonuses):</h4>
+            <table class="points-table">
+                <thead>
+                    <tr>
+                        <th>Event Type</th>
+                        <th>Base Points</th>
+                        <th>Time Bonus</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>Legion Rally</td><td class="highlight">12 pts</td><td rowspan="9">+1 pt (30-59 min)<br>+2 pts (60-89 min)<br>+3 pts (90+ min)</td></tr>
+                    <tr><td>Inspection</td><td class="highlight">12 pts</td></tr>
+                    <tr><td>Rally</td><td class="highlight">8 pts</td></tr>
+                    <tr><td>Practice Raid</td><td class="highlight">6 pts</td></tr>
+                    <tr><td>Training</td><td class="highlight">4 pts</td></tr>
+                    <tr><td>Deployment</td><td class="highlight">3 pts</td></tr>
+                    <tr><td>Server Startup</td><td class="highlight">3 pts</td></tr>
+                    <tr><td>Patrol</td><td class="highlight">3 pts</td></tr>
+                    <tr><td>Gamenight</td><td class="highlight">2 pts</td></tr>
+                </tbody>
+            </table>
+            <p style="margin-top: 15px; color: #FFD700;"><strong>Note:</strong> Staff members do not receive time bonuses. Only Legionaries earn time-based bonuses.</p>
+        </div>
+
+        <div class="technical-section">
+            <h3 style="color: #FFD700; margin-bottom: 20px;">📝 Comprehensive Logging System</h3>
+            <p>Multi-channel logging for complete transparency and record-keeping.</p>
+            <ul style="list-style: none; margin: 15px 0;">
+                <li style="padding: 8px 0;">🔥 <strong>Event Log:</strong> All approved combat events</li>
+                <li style="padding: 8px 0;">🔥 <strong>Event Edit Log:</strong> Track all event modifications</li>
+                <li style="padding: 8px 0;">🔥 <strong>Penance Log:</strong> Penance assignments and removals</li>
+                <li style="padding: 8px 0;">🔥 <strong>Oath Log:</strong> Oath declarations, fulfillments, and cancellations</li>
+                <li style="padding: 8px 0;">🔥 <strong>Weekly Reset Log:</strong> Automated weekly quota reset reports</li>
+                <li style="padding: 8px 0;">🔥 <strong>DM Relay:</strong> Direct message support system</li>
+            </ul>
+        </div>
+
+        <div class="technical-section">
+            <h3 style="color: #FFD700; margin-bottom: 20px;">⏰ Automated Systems</h3>
+            <ul style="list-style: none; margin: 15px 0;">
+                <li style="padding: 8px 0;">🔥 <strong>Weekly Reset:</strong> Automatic quota reset every Sunday at midnight EST</li>
+                <li style="padding: 8px 0;">🔥 <strong>Oath Expiration:</strong> Automatic oath cleanup and expiration tracking</li>
+                <li style="padding: 8px 0;">🔥 <strong>Penance Tracking:</strong> Auto-remove expired penances</li>
+                <li style="padding: 8px 0;">🔥 <strong>Data Persistence:</strong> Automatic saves to GitHub after every change</li>
+                <li style="padding: 8px 0;">🔥 <strong>EST Timezone:</strong> All time calculations in Eastern Standard Time</li>
+            </ul>
         </div>
 
         <footer>
+            <div class="flame">🔥</div>
             <p><strong>Prometheus Bot</strong> - Salamanders XVIII Legion</p>
             <p>Developed for the sons of Vulkan</p>
-            <p class="motto">"Vulkan Lives! Into the fires of battle!"</p>
-            <p style="margin-top: 15px; font-size: 0.9em; color: #b0b0b0;">
-                Powered by Discord.js v14 | GitHub Sharded Storage | Node.js 18+
+            <p class="tagline">"Vulkan Lives! Into the fires of battle!"</p>
+            <p style="margin-top: 20px; font-size: 0.9em;">
+                Powered by Discord.js v14 | GitHub Sharded Storage | Google Sheets API | Node.js 18+
             </p>
         </footer>
     </div>
