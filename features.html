@@ -200,22 +200,8 @@
         }
 
         .highlight {
-            color: #FF4500;
+            color: #FFD700;
             font-weight: bold;
-        }
-
-        @media (max-width: 768px) {
-            .container {
-                padding: 20px;
-            }
-
-            h1 {
-                font-size: 2em;
-            }
-
-            .feature-grid {
-                grid-template-columns: 1fr;
-            }
         }
     </style>
 </head>
@@ -223,96 +209,75 @@
     <div class="container">
         <header>
             <h1>🔥 PROMETHEUS BOT 🔥</h1>
-            <div class="subtitle">Salamanders XVIII Legion Command System</div>
-            <p class="tagline">"Into the fires of battle, unto the anvil of war!"</p>
-            <p class="description">Comprehensive battle tracking, quota management, and legion coordination for the sons of Vulkan.</p>
+            <div class="subtitle">Salamanders XVIII Legion Discord Bot</div>
+            <div class="tagline">"Into the fires of battle, unto the anvil of war!"</div>
+            <div class="description">
+                A comprehensive management system for Warhammer 30K Salamanders Legion roleplay, 
+                featuring character cards, event tracking, Google Sheets integration, and Salamanders lore.
+            </div>
         </header>
 
         <h2>⚔️ Core Features ⚔️</h2>
 
         <div class="feature-grid">
-            <!-- Combat Event Logging -->
+            <!-- Character Cards -->
             <div class="feature-card">
-                <div class="feature-icon">⚡</div>
-                <h3>Combat Event Logging<span class="badge new">Enhanced</span></h3>
-                <p>Track your battles and automatically earn quota points based on your role and performance.</p>
+                <div class="feature-icon">📋</div>
+                <h3>Character Card System</h3>
+                <p>Create and manage detailed character profiles for your Salamander warrior.</p>
                 <ul>
-                    <li>10+ event types (Training, Deployment, Rally, Inspection, etc.)</li>
+                    <li>Customizable character profiles</li>
+                    <li>Roblox username integration</li>
+                    <li>Character quotes and history</li>
+                    <li>Custom character images</li>
+                    <li>Point and stats tracking</li>
+                    <li>Editable profile fields</li>
+                </ul>
+                <div>
+                    <span class="command">/create_character_card</span>
+                    <span class="command">/view_character_card</span>
+                    <span class="command">/edit_character_card</span>
+                    <span class="command">/delete_character_card</span>
+                </div>
+            </div>
+
+            <!-- Event Logging -->
+            <div class="feature-card">
+                <div class="feature-icon">⚔️</div>
+                <h3>Event Logging & Points<span class="badge new">UPDATED</span></h3>
+                <p>Track combat events and earn points with automated Google Sheets integration.</p>
+                <ul>
+                    <li>10 event types (Training, Deployment, Rally, etc.)</li>
+                    <li>Different points for Staff vs Legionaries</li>
+                    <li>Time-based bonuses for Legionaries</li>
                     <li>Screenshot proof required</li>
-                    <li>Difficulty ratings & enemy types</li>
-                    <li>Time-based bonuses for Legionaries (30/60/90+ min)</li>
-                    <li>Dual point systems (Staff vs Legionary)</li>
-                    <li>Approval workflow with authorized roles</li>
-                    <li>Automatic Google Sheets quota updates</li>
-                    <li>Edit events after submission</li>
+                    <li>Approval workflow system</li>
+                    <li>Auto-sync to Google Sheets</li>
+                    <li>Weekly quota tracking</li>
                 </ul>
                 <div>
-                    <span class="command">/event_log</span>
-                    <span class="command">/view_logs</span>
-                    <span class="command">/edit_event</span>
+                    <span class="command">/log_event</span>
+                    <span class="badge staff">STAFF/LEGIONARY</span>
                 </div>
             </div>
 
-            <!-- Google Sheets Integration -->
-            <div class="feature-card">
-                <div class="feature-icon">📊</div>
-                <h3>Google Sheets Integration<span class="badge new">NEW</span></h3>
-                <p>Seamless quota tracking with automatic Google Sheets updates.</p>
-                <ul>
-                    <li>Auto-updates points per approved event</li>
-                    <li>Daily quota tracking (Monday-Sunday)</li>
-                    <li>Multi-company sheet support</li>
-                    <li>Auto-detects user's company</li>
-                    <li>Weekly totals calculated automatically</li>
-                    <li>EST timezone-based day tracking</li>
-                    <li>Weekly reset on Sunday midnight</li>
-                </ul>
-                <div>
-                    <span class="command">/weekly_reset</span>
-                    <span class="badge admin">ADMIN</span>
-                </div>
-            </div>
-
-            <!-- Event Approval System -->
-            <div class="feature-card">
-                <div class="feature-icon">✅</div>
-                <h3>Event Approval System<span class="badge staff">STAFF</span></h3>
-                <p>Review and approve combat event submissions with full logging.</p>
-                <ul>
-                    <li>Approve or decline submitted events</li>
-                    <li>Add approval notes/feedback</li>
-                    <li>Multi-user approval support</li>
-                    <li>Automatic point calculation on approval</li>
-                    <li>Rich embed notifications</li>
-                    <li>Dedicated approval log channel</li>
-                </ul>
-                <div>
-                    <span class="command">/approve_event</span>
-                    <span class="command">/decline_event</span>
-                    <span class="badge staff">STAFF</span>
-                </div>
-            </div>
-
-            <!-- Oath of Moment -->
+            <!-- Oath System -->
             <div class="feature-card">
                 <div class="feature-icon">🔥</div>
-                <h3>Oath of Moment</h3>
-                <p>Swear sacred oaths in Vulkan's name and prove your dedication.</p>
+                <h3>Oath of Fire System<span class="badge new">RENAMED</span></h3>
+                <p>Swear sacred oaths in the name of Vulkan and the Salamanders.</p>
                 <ul>
-                    <li>Swear personal oaths with custom duration</li>
-                    <li>Days and hours configuration</li>
-                    <li>Active oath tracking & reminders</li>
-                    <li>Fulfill or cancel oaths with authorization</li>
-                    <li>Complete oath history</li>
-                    <li>Automated expiration system</li>
-                    <li>View all warriors' active oaths</li>
+                    <li>Swear personal oaths of duty</li>
+                    <li>Track oath fulfillment</li>
+                    <li>View active oaths on character cards</li>
+                    <li>Oath cancellation option</li>
+                    <li>Dedicated oath logging</li>
+                    <li>Fulfillment recognition system</li>
                 </ul>
                 <div>
-                    <span class="command">/oath_of_moment</span>
-                    <span class="command">/my_oath</span>
-                    <span class="command">/fulfill_oath</span>
-                    <span class="command">/cancel_oath</span>
-                    <span class="command">/all_oaths</span>
+                    <span class="command">/oath_of_fire</span>
+                    <span class="command">/oath_fulfilled</span>
+                    <span class="badge staff">AUTHORIZED</span>
                 </div>
             </div>
 
@@ -325,13 +290,12 @@
                     <li>Award commendations to deserving warriors</li>
                     <li>Custom reasons for recognition</li>
                     <li>Complete commendation history</li>
-                    <li>Anti-spam cooldown (5 minutes)</li>
+                    <li>24-hour cooldown per commender</li>
                     <li>Permission-based awarding</li>
                     <li>Public recognition embeds</li>
                 </ul>
                 <div>
-                    <span class="command">/commend</span>
-                    <span class="command">/my_commendations</span>
+                    <span class="command">/commend_warrior</span>
                     <span class="badge staff">AUTHORIZED</span>
                 </div>
             </div>
@@ -339,7 +303,7 @@
             <!-- Penance System -->
             <div class="feature-card">
                 <div class="feature-icon">⚖️</div>
-                <h3>Penance System<span class="badge admin">ADMIN</span></h3>
+                <h3>Penance System</h3>
                 <p>Assign and track penances for warriors requiring correction.</p>
                 <ul>
                     <li>Time-based penances (days/hours)</li>
@@ -353,6 +317,22 @@
                     <span class="command">/assign_penance</span>
                     <span class="command">/remove_penance</span>
                     <span class="badge admin">ADMIN</span>
+                </div>
+            </div>
+
+            <!-- Leaderboards -->
+            <div class="feature-card">
+                <div class="feature-icon">🏆</div>
+                <h3>Leaderboards<span class="badge new">SIMPLIFIED</span></h3>
+                <p>View top warriors across different categories.</p>
+                <ul>
+                    <li>Total Points leaderboard</li>
+                    <li>Oaths Fulfilled leaderboard</li>
+                    <li>Top 10 rankings</li>
+                    <li>Real-time updates</li>
+                </ul>
+                <div>
+                    <span class="command">/character_card_leaderboard</span>
                 </div>
             </div>
 
@@ -382,7 +362,7 @@
             <!-- Admin Tools -->
             <div class="feature-card">
                 <div class="feature-icon">👑</div>
-                <h3>Admin Communication Tools<span class="badge admin">ADMIN</span></h3>
+                <h3>Admin Communication Tools</h3>
                 <p>Powerful tools for legion leadership to communicate and coordinate.</p>
                 <ul>
                     <li>Speak as Prometheus in any channel</li>
@@ -390,13 +370,31 @@
                     <li>Create directives with buttons/links</li>
                     <li>Multi-button support (up to 5)</li>
                     <li>Custom thumbnails and footers</li>
-                    <li>Mass role pinging capability</li>
+                    <li>Mass role DM capability</li>
                 </ul>
                 <div>
                     <span class="command">/speak_as_prometheus</span>
                     <span class="command">/prometheus_directive</span>
-                    <span class="command">/mass_ping</span>
+                    <span class="command">/dm_roles</span>
                     <span class="badge admin">ADMIN</span>
+                </div>
+            </div>
+
+            <!-- Qualifications -->
+            <div class="feature-card">
+                <div class="feature-icon">🎓</div>
+                <h3>Qualifications System</h3>
+                <p>Track warrior training and specializations.</p>
+                <ul>
+                    <li>8 different qualification types</li>
+                    <li>Leadership courses (Basic & Advanced)</li>
+                    <li>Specialized training tracks</li>
+                    <li>Add/remove qualifications</li>
+                    <li>Display on character cards</li>
+                </ul>
+                <div>
+                    <span class="command">/manage_qualifications</span>
+                    <span class="badge admin">AUTHORIZED</span>
                 </div>
             </div>
         </div>
@@ -417,15 +415,15 @@
         </div>
 
         <div class="technical-section">
-            <h3 style="color: #FFD700; margin-bottom: 20px;">🔐 Permission Management</h3>
-            <p>Granular role-based access control for all features.</p>
+            <h3 style="color: #FFD700; margin-bottom: 20px;">📊 Google Sheets Integration</h3>
+            <p>Seamless integration with Google Sheets for quota tracking and reporting.</p>
             <ul style="list-style: none; margin: 15px 0;">
-                <li style="padding: 8px 0;">🔥 Bot Admin override permissions (configurable user IDs)</li>
-                <li style="padding: 8px 0;">🔥 Staff role permissions for event approvals</li>
-                <li style="padding: 8px 0;">🔥 Commendation authorization role</li>
-                <li style="padding: 8px 0;">🔥 Event approval role management</li>
-                <li style="padding: 8px 0;">🔥 Penance assignment role (admin-only)</li>
-                <li style="padding: 8px 0;">🔥 Oath fulfillment role permissions</li>
+                <li style="padding: 8px 0;">🔥 Automatic point sync to company sheets</li>
+                <li style="padding: 8px 0;">🔥 Daily quota tracking (Monday-Sunday)</li>
+                <li style="padding: 8px 0;">🔥 Weekly automatic reset (Sunday midnight EST)</li>
+                <li style="padding: 8px 0;">🔥 Multi-company support</li>
+                <li style="padding: 8px 0;">🔥 Auto-detection of user's company</li>
+                <li style="padding: 8px 0;">🔥 Week total calculations</li>
             </ul>
         </div>
 
@@ -446,7 +444,11 @@
                     <tr><td>Training</td><td class="highlight">2 pts</td></tr>
                     <tr><td>Practice Raid</td><td class="highlight">2 pts</td></tr>
                     <tr><td>Tryout</td><td class="highlight">2 pts</td></tr>
-                    <tr><td>Deployment / Server Startup / Patrol / Gamenight / Rally</td><td class="highlight">1 pt</td></tr>
+                    <tr><td>Deployment</td><td class="highlight">1 pt</td></tr>
+                    <tr><td>Server Startup</td><td class="highlight">1 pt</td></tr>
+                    <tr><td>Patrol</td><td class="highlight">1 pt</td></tr>
+                    <tr><td>Gamenight</td><td class="highlight">1 pt</td></tr>
+                    <tr><td>Rally</td><td class="highlight">1 pt</td></tr>
                 </tbody>
             </table>
 
@@ -479,11 +481,10 @@
             <p>Multi-channel logging for complete transparency and record-keeping.</p>
             <ul style="list-style: none; margin: 15px 0;">
                 <li style="padding: 8px 0;">🔥 <strong>Event Log:</strong> All approved combat events</li>
-                <li style="padding: 8px 0;">🔥 <strong>Event Edit Log:</strong> Track all event modifications</li>
                 <li style="padding: 8px 0;">🔥 <strong>Penance Log:</strong> Penance assignments and removals</li>
                 <li style="padding: 8px 0;">🔥 <strong>Oath Log:</strong> Oath declarations, fulfillments, and cancellations</li>
                 <li style="padding: 8px 0;">🔥 <strong>Weekly Reset Log:</strong> Automated weekly quota reset reports</li>
-                <li style="padding: 8px 0;">🔥 <strong>DM Relay:</strong> Direct message support system</li>
+                <li style="padding: 8px 0;">🔥 <strong>Qualification Log:</strong> Qualification awards and removals</li>
             </ul>
         </div>
 
@@ -491,16 +492,30 @@
             <h3 style="color: #FFD700; margin-bottom: 20px;">⏰ Automated Systems</h3>
             <ul style="list-style: none; margin: 15px 0;">
                 <li style="padding: 8px 0;">🔥 <strong>Weekly Reset:</strong> Automatic quota reset every Sunday at midnight EST</li>
-                <li style="padding: 8px 0;">🔥 <strong>Oath Expiration:</strong> Automatic oath cleanup and expiration tracking</li>
                 <li style="padding: 8px 0;">🔥 <strong>Penance Tracking:</strong> Auto-remove expired penances</li>
                 <li style="padding: 8px 0;">🔥 <strong>Data Persistence:</strong> Automatic saves to GitHub after every change</li>
                 <li style="padding: 8px 0;">🔥 <strong>EST Timezone:</strong> All time calculations in Eastern Standard Time</li>
+                <li style="padding: 8px 0;">🔥 <strong>Cooldown Management:</strong> Automated cooldowns for commendations</li>
+            </ul>
+        </div>
+
+        <div class="technical-section">
+            <h3 style="color: #FFD700; margin-bottom: 20px;">🔐 Permission Management</h3>
+            <p>Granular role-based access control for all features.</p>
+            <ul style="list-style: none; margin: 15px 0;">
+                <li style="padding: 8px 0;">🔥 Bot Admin override permissions (configurable user IDs)</li>
+                <li style="padding: 8px 0;">🔥 Staff/Legionary role for event logging</li>
+                <li style="padding: 8px 0;">🔥 Event approval role management</li>
+                <li style="padding: 8px 0;">🔥 Commendation authorization role</li>
+                <li style="padding: 8px 0;">🔥 Penance assignment role (admin-only)</li>
+                <li style="padding: 8px 0;">🔥 Oath fulfillment role permissions</li>
+                <li style="padding: 8px 0;">🔥 Qualification management role</li>
             </ul>
         </div>
 
         <footer>
             <div class="flame">🔥</div>
-            <p><strong>Prometheus Bot</strong> - Salamanders XVIII Legion</p>
+            <p><strong>Prometheus Bot v2.1</strong> - Salamanders XVIII Legion</p>
             <p>Developed for the sons of Vulkan</p>
             <p class="tagline">"Vulkan Lives! Into the fires of battle!"</p>
             <p style="margin-top: 20px; font-size: 0.9em;">
